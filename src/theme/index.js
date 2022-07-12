@@ -5,7 +5,7 @@ const baseThemeOverrides = {
                 fontFamily: 'Josefin Sans',
                 fontWeight: '700',
                 fontSize: '18px',
-                backgroundImage: "../../public/images/bg-desktop-light.jpg",
+                backgroundImage: "../images/bg-desktop-light.jpg",
                 backgroundSize: { base: 'auto', lg: '100% auto' },
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: 'top center',
@@ -75,7 +75,7 @@ const secondThemeOverrides = {
     styles: {
         global: {
             body: {
-                backgroundImage: "../../public/images/bg-desktop-dark.jpg",
+                backgroundImage: "../images/bg-desktop-dark.jpg",
             }
         }
     },
