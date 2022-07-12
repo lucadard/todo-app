@@ -1,7 +1,7 @@
 # TODO APP from [FrontendMentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
 React-app made with Vite.
-
+<a href="https://www.google.com/" target="_blank">Proyect page</a>
 [Proyect page](https://frontendmentor-todoapp.netlify.app/)
 
 1. ## Dependencies:
