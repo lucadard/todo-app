@@ -1,14 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { Flex, Box, Text, Grid } from "@chakra-ui/react";
 
-import Logo from "./Logo";
-import ThemeToggler from "./ThemeToggler";
-import EnterTask from "./EnterTask";
-import TaskList from "./TaskList";
-import TaskFilter from "./TaskFilter";
-import useWindowWidth from "../hooks/useWindowWidth";
+import Logo from "./components/Logo";
+import ThemeToggler from "./components/ThemeToggler";
+import EnterTask from "./components/EnterTask";
+import TaskList from "./components/TaskList";
+import TaskFilter from "./components/TaskFilter";
+import useWindowWidth from "./hooks/useWindowWidth";
 
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App({ onThemeChange }) {
   const [tasks, setTasks] = useLocalStorage("tasks", []);

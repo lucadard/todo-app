@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
-import App from "./App";
+import App from "../App";
 import { baseThemeOverrides, secondThemeOverrides } from "../theme";
 
-import { useLocalStorage } from "./useLocalStorage";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const baseTheme = extendTheme(baseThemeOverrides);
 const secondTheme = extendTheme(secondThemeOverrides, baseTheme);
