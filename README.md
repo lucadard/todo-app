@@ -1,14 +1,14 @@
-# TODO APP from [FrontendMentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
+# TODO APP from <a href="ttps://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank">FrontendMentor</a>
 
 React-app made with Vite.
-<a href="https://www.google.com/" target="_blank">Proyect page</a>
-[Proyect page](https://frontendmentor-todoapp.netlify.app/)
+<a href="https://frontendmentor-todoapp.netlify.app/" target="_blank">Proyect page</a>
 
 1. ## Dependencies:
    - react
    - chakraUI
    - react-beautiful-dnd
 2. ## Main features:
+
    - responsiveness
    - add new todos
    - mark todos as complete
@@ -20,7 +20,7 @@ React-app made with Vite.
    - save page state
 
 3. ## To do:
-   - use light/dark mode  & checkbox icons
+   - use light/dark mode & checkbox icons
    - improve the code by making custom hooks to manage the state
    - animations
    - try to use CONTEXT
