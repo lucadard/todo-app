@@ -2,19 +2,17 @@ import { Box, useColorMode } from '@chakra-ui/react'
 import { React } from 'react'
 
 function ThemeToggler ({ onThemeChange }) {
-  const { toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box
       id='Toggler'
       fontSize='2rem'
       cursor='pointer'
-      border='1px'
+      userSelect='none'
       lineHeight='100%'
       onClick={() => toggleColorMode()}
     >
-      {window.localStorage.getItem('chakra-ui-color-mode') === '"light"'
-        ? 'T'
-        : 'T'}
+      {colorMode === 'dark' ? '☀️' : '🌙'}
     </Box>
   )
 }
