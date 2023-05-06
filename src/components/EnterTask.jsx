@@ -21,8 +21,9 @@ function EnterTask ({ tasks, addTask, setShowDuplicatedTaskMsg }) {
     <Grid
       id='EnterTask'
       borderRadius='5'
-      templateColumns='15% auto'
-      justif='center'
+      templateColumns='5% auto'
+      alignItems='center'
+      padding='0 2rem'
       h='4rem'
       borderBottom='1px solid rgba(0,0,0,0.2)'
     >
@@ -31,7 +32,6 @@ function EnterTask ({ tasks, addTask, setShowDuplicatedTaskMsg }) {
         borderColor={colorMode === 'light' ? 'rgba(0,0,0,.3)' : 'rgba(255,255,255,255,.3)'}
         size='lg'
         borderRadius=''
-        margin='0 auto'
       />
       <form onSubmit={handleSubmit}>
         <Input
@@ -39,7 +39,7 @@ function EnterTask ({ tasks, addTask, setShowDuplicatedTaskMsg }) {
           fontSize='18px'
           fontWeight='inherit'
           border='none'
-          p='0 1rem 0 0'
+          padding='0 2rem'
           placeholder='Create a new todo...'
           focusBorderColor='transparent'
           transition='inherit'
