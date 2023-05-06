@@ -1,103 +1,102 @@
-import { React, useState, useEffect } from "react";
-import { Flex, Box, Text, Grid } from "@chakra-ui/react";
+import { React, useState, useEffect } from 'react'
+import { Flex, Box, Text, Grid } from '@chakra-ui/react'
 
-import Logo from "./components/Logo";
-import ThemeToggler from "./components/ThemeToggler";
-import EnterTask from "./components/EnterTask";
-import TaskList from "./components/TaskList";
-import TaskFilter from "./components/TaskFilter";
-import useWindowWidth from "./hooks/useWindowWidth";
+import Logo from './components/Logo'
+import ThemeToggler from './components/ThemeToggler'
+import EnterTask from './components/EnterTask'
+import TaskList from './components/TaskList'
+import TaskFilter from './components/TaskFilter'
+import useWindowWidth from './hooks/useWindowWidth'
 
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import { useLocalStorage } from './hooks/useLocalStorage'
 
-function App({ onThemeChange }) {
-  const [tasks, setTasks] = useLocalStorage("tasks", []);
-  const [filter, setFilter] = useState("all");
-  const [activeTasks, setActiveTasks] = useState(0);
-  const [showDuplicatedTaskMsg, setShowDuplicatedTaskMsg] = useState(false);
-  const width = useWindowWidth();
+function App ({ onThemeChange }) {
+  const [tasks, setTasks] = useLocalStorage('tasks', [])
+  const [filter, setFilter] = useState('all')
+  const [activeTasks, setActiveTasks] = useState(0)
+  const [showDuplicatedTaskMsg, setShowDuplicatedTaskMsg] = useState(false)
+  const width = useWindowWidth()
 
   useEffect(() => {
     setActiveTasks(
       tasks.reduce((acc, task) => {
-        if (task.status === "active") return acc + 1;
-        else return acc;
+        if (task.status === 'active') return acc + 1
+        else return acc
       }, 0)
-    );
-  }, [tasks]);
+    )
+  }, [tasks])
 
   useEffect(() => {
     if (showDuplicatedTaskMsg) {
       setTimeout(() => {
-        setShowDuplicatedTaskMsg(false);
-      }, 2000);
+        setShowDuplicatedTaskMsg(false)
+      }, 2000)
     }
-  }, [showDuplicatedTaskMsg]);
+  }, [showDuplicatedTaskMsg])
 
   const addTask = (taskContent) => {
     const newTask = {
       id: new Date().valueOf(),
       content: taskContent,
-      status: "active",
-    };
-    setTasks([...tasks, newTask]);
-  };
+      status: 'active'
+    }
+    setTasks([...tasks, newTask])
+  }
 
   const deleteTask = (id) => {
     setTasks(
       tasks.filter((task) => {
-        return task.id !== id;
+        return task.id !== id
       })
-    );
-  };
+    )
+  }
 
   const toggleTaskStatus = (id) => {
     setTasks(
       tasks.map((task) => {
-        if (task.id === id)
-          task.status === "active" ? (task.status = "completed") : (task.status = "active");
-        return task;
+        if (task.id === id) { task.status === 'active' ? (task.status = 'completed') : (task.status = 'active') }
+        return task
       })
-    );
-  };
+    )
+  }
 
   const clearCompletedTasks = () => {
     setTasks(
       tasks.filter((task) => {
-        return task.status !== "completed";
+        return task.status !== 'completed'
       })
-    );
-  };
+    )
+  }
 
   return (
-    <Flex justify="center" align="center">
+    <Flex justify='center' align='center'>
       <Grid
-        h=""
-        w={{ base: "90%", lg: "50%" }}
-        templateRows="5rem auto auto 4rem 2rem"
+        h=''
+        w={{ base: '90%', lg: '50%' }}
+        templateRows='5rem auto auto 4rem 2rem'
         gap={5}
-        mt="3rem"
+        mt='3rem'
       >
-        <Flex w="100%" justify="space-between" align="center">
+        <Flex w='100%' justify='space-between' align='center'>
           <Logo />
-          <ThemeToggler onThemeChange={onThemeChange} currentTheme={"light"} />
+          <ThemeToggler onThemeChange={onThemeChange} currentTheme='light' />
         </Flex>
-        <Box position="relative">
+        <Box position='relative'>
           <EnterTask
             tasks={tasks}
             addTask={addTask}
             setShowDuplicatedTaskMsg={setShowDuplicatedTaskMsg}
-            h="4rem"
+            h='4rem'
           />
-          <Flex position="absolute" w="100%" mt="-7.5rem">
+          <Flex position='absolute' w='100%' mt='-7.5rem'>
             <Text
               borderRadius={5}
-              m="0 auto"
-              bg="rgba(255, 0, 0, .5)"
-              p=".5rem 2rem"
-              fontSize="20px"
-              opacity={!showDuplicatedTaskMsg && "0"}
-              transition="opacity 500ms"
+              m='0 auto'
+              bg='rgba(255, 0, 0, .5)'
+              p='.5rem 2rem'
+              fontSize='20px'
+              opacity={!showDuplicatedTaskMsg && '0'}
+              transition='opacity 500ms'
             >
               There's already a task like that.
             </Text>
@@ -116,18 +115,18 @@ function App({ onThemeChange }) {
         />
         <TaskFilter
           shadow
-          show={width > 991 ? false : true}
+          show={!(width > 991)}
           filter={filter}
           setFilter={setFilter}
         />
-        <Flex align="center" justify="center">
-          <Text id="Footer" fontSize=".8rem">
+        <Flex align='center' justify='center'>
+          <Text id='Footer' fontSize='.8rem'>
             Drag and drop to reorder list
           </Text>
         </Flex>
       </Grid>
     </Flex>
-  );
+  )
 }
 
-export default App;
+export default App
