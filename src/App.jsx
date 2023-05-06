@@ -126,7 +126,7 @@ function App ({ onThemeChange }) {
         />
         <Flex align='center' justify='center'>
           <Text id='Footer' fontSize='.8rem'>
-            Drag and drop to reorder list
+            Drag & drop to reorder the list
           </Text>
         </Flex>
       </Grid>
