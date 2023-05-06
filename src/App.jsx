@@ -88,7 +88,12 @@ function App ({ onThemeChange }) {
             setShowDuplicatedTaskMsg={setShowDuplicatedTaskMsg}
             h='4rem'
           />
-          <Flex position='absolute' w='100%' mt='-7.5rem'>
+          <Flex
+            position='absolute'
+            w='100%'
+            mt='-7.5rem'
+            pointerEvents='none'
+          >
             <Text
               borderRadius={5}
               m='0 auto'
