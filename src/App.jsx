@@ -69,13 +69,14 @@ function App ({ onThemeChange }) {
   }
 
   return (
-    <Flex justify='center' align='center'>
+    <Flex direction='column' justify='space-between' align='center' height='100vh'>
       <Grid
         h=''
         w={{ base: '90%', lg: '50%' }}
-        templateRows='5rem auto auto 4rem 2rem'
+        templateRows='5rem auto auto 4rem'
         gap={5}
         mt='3rem'
+        pb='1rem'
       >
         <Flex w='100%' justify='space-between' align='center'>
           <Logo />
@@ -130,6 +131,22 @@ function App ({ onThemeChange }) {
           </Text>
         </Flex>
       </Grid>
+      <Box py='1rem'>
+        <Text
+          fontWeight={400}
+          fontSize={14}
+        >Made by
+          <Text
+            ms='.3rem'
+            as='a'
+            color='blue.500'
+            href='https://github.com/lucadard'
+            target='_blank' rel='noreferrer'
+          >
+            lucadard
+          </Text>
+        </Text>
+      </Box>
     </Flex>
   )
 }
