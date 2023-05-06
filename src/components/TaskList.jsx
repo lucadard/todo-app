@@ -81,7 +81,7 @@ function TaskList ({
         m='0 2rem'
         align='center'
       >
-        <Text>{activeTasks} items left</Text>
+        <Text>{activeTasks} tasks left</Text>
         <TaskFilter
           show={!(width <= 991)}
           filter={filter}
