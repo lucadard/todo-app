@@ -103,7 +103,7 @@ function App ({ onThemeChange }) {
               opacity={!showDuplicatedTaskMsg && '0'}
               transition='opacity 500ms'
             >
-              There's already a task like that.
+              Task already exists.
             </Text>
           </Flex>
         </Box>
