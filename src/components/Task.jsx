@@ -1,9 +1,10 @@
-import { Grid, Checkbox, Text, Flex, Box } from '@chakra-ui/react'
+import { Grid, Checkbox, Text, Flex, Box, useColorMode } from '@chakra-ui/react'
 import { React, useState } from 'react'
 import { CloseIcon } from '@chakra-ui/icons'
 
 function Task ({ task, deleteTask, toggleTaskStatus, filter }) {
   const [closeIconShow, setCloseIconShow] = useState(false)
+  const { colorMode } = useColorMode()
   const toggleCloseIcon = () => {
     setCloseIconShow(!closeIconShow)
   }
@@ -17,7 +18,9 @@ function Task ({ task, deleteTask, toggleTaskStatus, filter }) {
       position='relative'
     >
       <Checkbox
-        variant='primary'
+        id='TaskCheckbox'
+        variant='circular'
+        borderColor={colorMode === 'light' ? 'rgba(0,0,0,.3)' : 'rgba(255,255,255,255,.3)'}
         size='lg'
         margin='0 auto'
         defaultChecked={task.status === 'completed'}

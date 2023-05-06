@@ -1,8 +1,9 @@
-import { Grid, Input, Checkbox } from '@chakra-ui/react'
+import { Grid, Input, Checkbox, useColorMode } from '@chakra-ui/react'
 import { React, useState } from 'react'
 
 function EnterTask ({ tasks, addTask, setShowDuplicatedTaskMsg }) {
   const [input, setInput] = useState('')
+  const { colorMode } = useColorMode()
   const handleSubmit = (e) => {
     e.preventDefault()
     if (input === '') return
@@ -27,6 +28,7 @@ function EnterTask ({ tasks, addTask, setShowDuplicatedTaskMsg }) {
     >
       <Checkbox
         pointerEvents='none'
+        borderColor={colorMode === 'light' ? 'rgba(0,0,0,.3)' : 'rgba(255,255,255,255,.3)'}
         size='lg'
         borderRadius=''
         margin='0 auto'
